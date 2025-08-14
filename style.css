@@ -54,12 +54,14 @@ nav a:hover {
 .hero-content {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
 }
+
 .profile-image img {
-  width: 160px;
-  height: 160px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   border: 6px solid #fff;
   box-shadow: 0 4px 24px rgba(0,120,212,0.15);
@@ -114,6 +116,8 @@ nav a:hover {
 }
 .about-content p {
   font-size: 1.15rem;
+  padding: 0 20px;
+  text-align: justify;
   color: #444;
 }
 
@@ -361,7 +365,7 @@ nav a:hover {
 .section-title {
     text-align: center;
     font-size: 2.5rem;
-    color: white;
+    color: #0078d4;
     margin-bottom: 50px;
     font-weight: 700;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -649,6 +653,13 @@ textarea {
   }
 }
 
+/* Hide header on small screens */
+@media (max-width: 600px) {
+  header {
+    display: none;
+  }
+}
+
 /* Footer */
 footer {
   background: #0078d4;
@@ -704,8 +715,8 @@ footer {
     padding: 0 8px;
   }
   .profile-image img {
-    width: 110px;
-    height: 110px;
+    width: 175px;
+    height: 175px;
   }
   .hero-text h1 {
     font-size: 2rem;
