@@ -1,0 +1,716 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f6f8fa;
+  color: #222;
+  line-height: 1.6;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 18px 0;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo img {
+  height: 48px;
+}
+nav ul {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+nav a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: #0078d4;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(90deg, #0078d4 0%, #00c6fb 100%);
+  color: #fff;
+  padding: 60px 0 40px 0;
+}
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.profile-image img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  box-shadow: 0 4px 24px rgba(0,120,212,0.15);
+}
+.hero-text h1 {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+}
+.job-title ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 18px;
+}
+.job-title li {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+.social-links {
+  display: flex;
+  gap: 18px;
+}
+.social-link {
+  background: #fff;
+  color: #0078d4;
+  padding: 7px 18px;
+  border-radius: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,120,212,0.08);
+  transition: background 0.2s, color 0.2s;
+}
+.social-link:hover {
+  background: #0078d4;
+  color: #fff;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: #0078d4;
+  font-weight: 700;
+}
+
+/* About Section */
+.about {
+  background: #fff;
+  padding: 50px 0;
+  border-radius: 12px;
+  margin: 32px 0;
+  box-shadow: 0 2px 16px rgba(0,120,212,0.05);
+}
+.about-content p {
+  font-size: 1.15rem;
+  color: #444;
+}
+
+/* Projects Slider */
+.projects {
+  padding: 50px 0;
+}
+.slider-container {
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(0,120,212,0.06);
+  margin-bottom: 18px;
+}
+.slider {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(.77,0,.18,1);
+}
+.project-slide {
+  min-width: 100%;
+  padding: 38px 28px;
+  box-sizing: border-box;
+  text-align: left;
+}
+.project-slide h3 {
+  color: #0078d4;
+  margin-bottom: 10px;
+}
+.project-tech {
+  margin-top: 14px;
+}
+.tech-tag {
+  display: inline-block;
+  background: #e3f2fd;
+  color: #0078d4;
+  padding: 4px 12px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  margin-right: 8px;
+  margin-bottom: 4px;
+}
+.slider-nav {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+.slider-btn {
+  background: #0078d4;
+  color: #fff;
+  border: none;
+  font-size: 1.6rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.slider-btn:hover {
+  background: #005fa3;
+}
+
+/* Services Section */
+.services {
+  background: #fff;
+  padding: 50px 0;
+  border-radius: 12px;
+  margin: 32px 0;
+  box-shadow: 0 2px 16px rgba(0,120,212,0.05);
+}
+.services-grid {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.service-card {
+  background: #f6f8fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,120,212,0.07);
+  padding: 28px 22px;
+  width: 300px;
+  text-align: center;
+  margin-bottom: 18px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: -60%;
+  left: -60%;
+  width: 220%;
+  height: 220%;
+  background: linear-gradient(120deg, rgba(0,199,255,0.12) 0%, rgba(255,255,255,0.18) 60%, rgba(0,120,212,0.09) 100%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+  z-index: 1;
+}
+.service-card:hover {
+  box-shadow: 0 8px 32px rgba(0,120,212,0.18), 0 2px 8px rgba(0,120,212,0.07);
+  transform: translateY(-6px) scale(1.03);
+}
+.service-card:hover::before {
+  opacity: 1;
+}
+.service-card h3 {
+  color: #0078d4;
+  margin-bottom: 8px;
+}
+.service-price {
+  font-size: 1.5rem;
+  color: #00c6fb;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.service-features {
+  list-style: none;
+  margin-bottom: 18px;
+  color: #444;
+}
+.service-features li {
+  margin-bottom: 6px;
+}
+.service-btn {
+  background: #0078d4;
+  color: #fff;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.service-btn:hover {
+  background: #005fa3;
+}
+
+/* Testimonials Slider */
+.testimonials {
+  background: #f6f8fa;
+  padding: 50px 0;
+}
+.testimonials-slider-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(0,120,212,0.05);
+  margin-bottom: 18px;
+}
+.testimonials-slider {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(.77,0,.18,1);
+}
+.testimonial-slide {
+  min-width: 100%;
+  padding: 38px 28px;
+  box-sizing: border-box;
+  text-align: left;
+}
+.testimonial-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.quote-icon {
+  font-size: 2.5rem;
+  color: #0078d4;
+}
+.testimonial-text {
+  font-size: 1.1rem;
+  color: #444;
+}
+.testimonial-rating .star {
+  color: #ffd700;
+  font-size: 1.2rem;
+}
+.client-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+.client-avatar {
+  font-size: 2rem;
+}
+.client-details h4 {
+  margin-bottom: 2px;
+  color: #0078d4;
+}
+.testimonials-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 12px;
+}
+.testimonial-btn {
+  background: #0078d4;
+  color: #fff;
+  border: none;
+  font-size: 1.6rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.testimonial-btn:hover {
+  background: #005fa3;
+}
+.testimonial-dots {
+  display: flex;
+  gap: 8px;
+}
+.testimonial-dot {
+  width: 10px;
+  height: 10px;
+  background: #e3f2fd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.testimonial-dot.active {
+  background: #0078d4;
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+    background: #fff;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 50px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-grid ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Common Card Styles */
+.gmail-card,
+.whatsapp-card,
+.call-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gmail-card:hover,
+.whatsapp-card:hover,
+.call-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.gmail-card p,
+.whatsapp-card p,
+.call-card p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Gmail Card Specific */
+.gmail-card {
+    border-left: 5px solid #ea4335;
+}
+
+.gmail-card p::before {
+    content: "✉️ ";
+    margin-right: 8px;
+}
+
+/* WhatsApp Card Specific */
+.whatsapp-card {
+    border-left: 5px solid #25d366;
+}
+
+.whatsapp-card p::before {
+    content: "💬 ";
+    margin-right: 8px;
+}
+
+/* Call Card Specific */
+.call-card {
+    border-left: 5px solid #4285f4;
+    text-align: center;
+}
+
+.call-card p::before {
+    content: "📞 ";
+    margin-right: 8px;
+}
+
+/* Form Elements */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e1e8ed;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+    font-family: inherit;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+    max-height: 300px;
+}
+
+/* Button Styles */
+.contact-btn,
+.whatsapp-link {
+    width: 100%;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contact-btn {
+    background: linear-gradient(135deg, #ea4335, #d33b2c);
+    color: white;
+}
+
+.contact-btn:hover {
+    background: linear-gradient(135deg, #d33b2c, #b52d20);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(234, 67, 53, 0.3);
+}
+
+.whatsapp-link {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: white;
+}
+
+.whatsapp-link:hover {
+    background: linear-gradient(135deg, #128c7e, #075e54);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+/* Call Section */
+.call-number {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 20px;
+    font-family: monospace;
+    letter-spacing: 1px;
+}
+
+.call-icon {
+    display: inline-flex;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4285f4, #1a73e8);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin-top: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.call-icon::before {
+    content: "📞";
+    font-size: 30px;
+    color: white;
+}
+
+.call-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(66, 133, 244, 0.3);
+}
+
+.call-icon:active {
+    transform: scale(0.95);
+}
+
+/* WhatsApp link styling */
+.whatsapp-card a {
+    color: #25d366;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.whatsapp-card a:hover {
+    color: #128c7e;
+    text-decoration: underline;
+}
+
+/* Form Status */
+#formStatus {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-align: center;
+    display: none;
+}
+
+#formStatus.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+#formStatus.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Loading animation */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.loading .contact-btn::after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .contact-grid ul {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .gmail-card,
+    .whatsapp-card,
+    .call-card {
+        padding: 25px;
+    }
+
+    .call-number {
+        font-size: 1.3rem;
+    }
+
+    .call-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .call-icon::before {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+  .gmail-card,
+  .whatsapp-card,
+  .call-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+}
+
+/* Footer */
+footer {
+  background: #0078d4;
+  color: #fff;
+  padding: 38px 0 18px 0;
+  margin-top: 40px;
+}
+.footer-content {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.footer-section h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+.footer-nav, .footer-social {
+  list-style: none;
+  padding-left: 0;
+}
+.footer-nav li, .footer-social li {
+  margin-bottom: 6px;
+}
+.footer-nav a, .footer-social a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-nav a:hover, .footer-social a:hover {
+  color: #ffd700;
+}
+.footer-bottom {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #e3f2fd;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-content, .services-grid, .contact-grid ul, .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .service-card, .gmail-card, .whatsapp-card {
+    width: 90%;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    padding: 0 8px;
+  }
+  .profile-image img {
+    width: 110px;
+    height: 110px;
+  }
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .section-title {
+    font-size: 1.3rem;
+  }
+}
